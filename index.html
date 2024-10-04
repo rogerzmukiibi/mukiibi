@@ -1,15 +1,18 @@
-<html>
-    <h1>
-        Hey, I'm Mukiibi Rogers.
-    </h1>
-    <body>
-        <h2>About me</h2>
-        <p>
-            I'm an Electrical Engineering student at Makerere University. I'm also a software developer and I'm passionate about technology.
-        </p>
-        <h2>What I'm working on</h2>
-        <p>
-            I'm currently working on my personal website and a few other projects.
-        </p>
-    </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+  
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <br>
+        {{ post.excerpt }}
+      </li>
+    {% endfor %}
+  </ul>
+
+</div>
